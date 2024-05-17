@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Sidebar styles */
+.sidebar { @apply bg-gray-500 text-white h-screen p-4; }
+.sidebar h2 { @apply text-2xl font-semibold mb-4; }
+.sidebar ul { @apply list-none p-0; }
+.sidebar li { @apply mb-2; }
+.sidebar a { 
+  @apply block py-2 px-4 rounded hover:bg-gray-700; 
+}
+.sidebar a.active { @apply bg-gray-600; } 
