@@ -10,7 +10,7 @@ function Sidebar() {
   ];
 
   return (
-    <div className="bg-gray-800 text-white h-screen p-4">
+    <div className="bg-gray-800 text-white h-screen p-6">
       <h2 className="text-2xl font-semibold mb-4">Menu</h2>
       <ul>
         {menuItems.map((item) => (

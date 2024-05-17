@@ -1,14 +1,50 @@
 // main.jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
-import App from './App';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App";
+import GeneralJournal from "./pages/GeneralJournal";
+import GeneralLedger from "./pages/GeneralLedger";
+import MonthlyIncomeStatement from "./pages/IncomeStatement";
+// import InventoryStockCard from "./pages/Inventory";
+// import PurchasingOrder from "./pages/PurchaseOrder";
+// import Invoice from "./pages/Invoice";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const Router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/general-journal",
+    element: <GeneralJournal />,
+  },
+  {
+    path: "/general-ledger",
+    element: <GeneralLedger />,
+  },
+  {
+    path: "/monthly-income-statement",
+    element: <MonthlyIncomeStatement />,
+  },
+  // {
+  //   path: "/inventory-stock-card",
+  //   element: <InventoryStockCard />,
+  // },
+  // {
+  //   path: "/purchasing-order",
+  //   element: <PurchasingOrder />,
+  // },
+  // {
+  //   path: "/invoice",
+  //   element: <Invoice />,
+  // },
+  // Add other routes here
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+    <RouterProvider router={Router} />
   </React.StrictMode>
 );

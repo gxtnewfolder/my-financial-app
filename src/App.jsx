@@ -17,6 +17,7 @@ function App() {
   ];
 
   return (
+    
     <div className="flex">
       <Sidebar />
       <div className="container mx-auto p-4">
@@ -27,14 +28,7 @@ function App() {
               <Card title={card.title} icon={card.icon} text={card.text} />
             </Link>
           ))}
-        </div>
-        <Routes>
-          {/* <Route path="/general-journal" element={<GeneralJournal />} /> */}
-          {/* <Route path="/general-ledger" element={<GeneralLedger />} /> */}
-          {/* Add other routes here */}
-        </Routes>
-      
-        
+        </div>  
       </div>
     </div>
   );
