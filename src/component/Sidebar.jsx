@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Sidebar() {
   const menuItems = [
+    { name: 'Home', path: '/' },
     { name: 'Operation', path: '/operation' },
     { name: 'Management', path: '/management' },
     { name: 'Finance', path: '/finance' },
