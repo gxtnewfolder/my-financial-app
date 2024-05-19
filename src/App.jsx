@@ -44,7 +44,7 @@ function App() {
           {" "}
           {/* Use Tailwind's prose class for nice formatting */}
           <p>
-            TATA CO. is a leading oil distribution center providing
+            TATA co. is a leading oil distribution center providing
             reliable and efficient fuel delivery services to our valued
             customers. With state-of-the-art facilities and a dedicated team, we
             ensure the timely and secure distribution of petroleum products
