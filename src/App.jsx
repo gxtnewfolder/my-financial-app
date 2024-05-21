@@ -12,7 +12,7 @@ function App() {
     <div className="flex">
       <Sidebar />
       <div className="container mx-auto p-4">
-        <img src="../src/assets/logo.png" alt="Logo" className="mx-auto my-4 w-20" />
+        <img src="/src/assets/logo.png" alt="Logo" className="mx-auto my-4 w-20" />
         <h1 className="text-3xl font-bold mb-6 text-center">
           Welcome to TATA Oil Distribution Centre
         </h1>

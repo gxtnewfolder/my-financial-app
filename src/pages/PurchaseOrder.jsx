@@ -79,7 +79,7 @@ function PurchaseOrder() {
             {/* Header Section */}
             <h3 className="text-xl text-center font-semibold mb-4">Purchase Order</h3>
             <div className="flex justify-between mb-4">
-              <div className="mx-6"><img src="../src/assets/logo.png" alt="Logo" className="mx-auto my-4 w-20" /></div>
+              <div className="mx-6"><img src="/src/assets/logo.png" alt="Logo" className="mx-auto my-4 w-20" /></div>
               <div className="text-right">
                 <p>PO No: {po.poNumber}</p>
                 <p>Invoice No: {po.invoiceNumber}</p>
@@ -96,10 +96,10 @@ function PurchaseOrder() {
             <table className="min-w-full divide-y divide-gray-200">
               <thead>
                 <tr>
-                  <th className="px-6 py-3 bg-yellow-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item</th>
-                  <th className="px-6 py-3 bg-yellow-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price/Liter</th>
-                  <th className="px-6 py-3 bg-yellow-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Q'ty (Liter)</th>
-                  <th className="px-6 py-3 bg-yellow-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                  <th className="px-6 py-3 bg-yellow-100 rounded-md text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item</th>
+                  <th className="px-6 py-3 bg-yellow-100 rounded-md text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price/Liter</th>
+                  <th className="px-6 py-3 bg-yellow-100 rounded-md text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Q'ty (Liter)</th>
+                  <th className="px-6 py-3 bg-yellow-100 rounded-md text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
