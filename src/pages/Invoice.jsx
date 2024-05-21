@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // For linking to invoice details
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // For linking to invoice details
 
 function Invoice() {
   const [invoices, setInvoices] = useState([]);
@@ -7,11 +7,11 @@ function Invoice() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/invoices');
+        const response = await fetch("/api/invoices");
         const data = await response.json();
         setInvoices(data);
       } catch (error) {
-        console.error('Error fetching invoices:', error);
+        console.error("Error fetching invoices:", error);
         // Handle the error (e.g., show error message)
       }
     };
@@ -27,10 +27,18 @@ function Invoice() {
       <table className="min-w-full divide-y divide-gray-200">
         <thead>
           <tr>
-            <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Invoice Number</th>
-            <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-            <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-            <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Amount</th>
+            <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Invoice Number
+            </th>
+            <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Customer
+            </th>
+            <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Date
+            </th>
+            <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Total Amount
+            </th>
             {/* Add more headers as needed (e.g., Status) */}
           </tr>
         </thead>
@@ -38,11 +46,17 @@ function Invoice() {
           {invoices.map((invoice) => (
             <tr key={invoice.id}>
               <td className="px-6 py-4 whitespace-nowrap">
-                <Link to={`/invoices/${invoice.id}`}>{invoice.invoiceNumber}</Link> 
+                <Link to={`/invoices/${invoice.id}`}>
+                  {invoice.invoiceNumber}
+                </Link>
               </td>
-              <td className="px-6 py-4 whitespace-nowrap">{invoice.customerName}</td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                {invoice.customerName}
+              </td>
               <td className="px-6 py-4 whitespace-nowrap">{invoice.date}</td>
-              <td className="px-6 py-4 whitespace-nowrap">{invoice.totalAmount}</td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                {invoice.totalAmount}
+              </td>
               {/* Display other invoice details */}
             </tr>
           ))}

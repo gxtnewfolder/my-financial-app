@@ -32,6 +32,11 @@ function InventoryStockCard() {
         className="border border-gray-300 rounded-md p-2 mb-4"
       >
         {/* Populate with item options from your inventory */}
+
+        <option value="">Select an item</option>
+        <option value="item1">Item 1</option>
+        <option value="item2">Item 2</option>
+        <option value="item3">Item 3</option>
       </select>
 
       {/* Stock Card Table (if data is loaded) */}

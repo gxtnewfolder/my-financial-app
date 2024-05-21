@@ -76,7 +76,7 @@ function GeneralJournal() {
               // Credit Row
               <tr key={`${entry.id}-credit`}>
                 <td></td> {/* Empty cell for Date */}
-                <td className="px-16 py-4 whitespace-nowrap">{entry.creditAccount}</td>
+                <td className="px-20 py-4 whitespace-nowrap">{entry.creditAccount}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-right"></td>
                 <td className="px-6 py-4 whitespace-nowrap text-right">{entry.amount}</td>
               </tr>,
