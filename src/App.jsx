@@ -1,8 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "./component/Sidebar"; // Import your sidebar component
 
 function App() {
+  const navigate = useNavigate(); // Get the navigation function
+
+  const handleClick = () => {
+    navigate("/finance/inventory-stock-card"); // Navigate to the contact page
+  }
   return (
     <div className="flex">
       <Sidebar />
@@ -21,7 +26,7 @@ function App() {
               Total Fuel Stored: **1,250,000** Liters <br />
               Available Capacity: **750,000** Liters <br />
             </p>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+            <button onClick={handleClick} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
               View Inventory Details
             </button>
           </div>

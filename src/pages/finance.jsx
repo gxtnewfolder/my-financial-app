@@ -5,12 +5,12 @@ import Sidebar from '../component/Sidebar'; // Import your sidebar component
 
 function Finance() {
   const cards = [
-    { title: 'General Journal', icon: '📄', text: 'Click to View at Each Day', path: '/general-journal' },
-    { title: 'General Ledger', icon: '📒', text: 'Click to View at Each Account', path: '/general-ledger' },
-    { title: 'Montly income statement', icon: '📄', text: 'Click to View at Each Month', path: '/monthly-income-statement' },
-    { title: 'Inventory stock card', icon: '📒', text: 'Click to View at Each Month', path: '/inventory-stock-card' },
-    { title: 'Purchasing Order', icon: '📄', text: 'Click to View More', path: '/purchasing-order' },
-    { title: 'Invoice', icon: '📒', text: 'Click to View More', path: '/invoice'},
+    { title: 'General Journal', icon: '📄', text: 'Click to View at Each Day', path: '/finance/general-journal' },
+    { title: 'General Ledger', icon: '📒', text: 'Click to View at Each Account', path: '/finance/general-ledger' },
+    { title: 'Montly income statement', icon: '📄', text: 'Click to View at Each Month', path: '/finance/monthly-income-statement' },
+    { title: 'Inventory stock card', icon: '📒', text: 'Click to View at Each Month', path: '/finance/inventory-stock-card' },
+    { title: 'Purchasing Order', icon: '📄', text: 'Click to View More', path: '/finance/purchasing-order' },
+    { title: 'Invoice', icon: '📒', text: 'Click to View More', path: '/finance/invoice'},
     // ... other card data
   ];
 

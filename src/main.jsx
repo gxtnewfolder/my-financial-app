@@ -10,7 +10,7 @@ import InventoryStockCard from "./pages/Inventory";
 import PurchasingOrder from "./pages/PurchaseOrder";
 import Invoice from "./pages/Invoice";
 import Finance from "./pages/finance";
-import Performance from "./pages/performance";
+import Performance from "./pages/performance_real";
 import "./index.css";
 
 const Router = createBrowserRouter([
@@ -35,27 +35,27 @@ const Router = createBrowserRouter([
     element: <Performance />,
   },
   {
-    path: "/general-journal",
+    path: "/finance/general-journal",
     element: <GeneralJournal />,
   },
   {
-    path: "/general-ledger",
+    path: "/finance/general-ledger",
     element: <GeneralLedger />,
   },
   {
-    path: "/monthly-income-statement",
+    path: "/finance/monthly-income-statement",
     element: <MonthlyIncomeStatement />,
   },
   {
-    path: "/inventory-stock-card",
+    path: "/finance/inventory-stock-card",
     element: <InventoryStockCard />,
   },
   {
-    path: "/purchasing-order",
+    path: "/finance/purchasing-order",
     element: <PurchasingOrder />,
   },
   {
-    path: "/invoice",
+    path: "/finance/invoice",
     element: <Invoice />,
   },
   // Add other routes here
