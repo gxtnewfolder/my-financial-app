@@ -10,6 +10,7 @@ import InventoryStockCard from "./pages/Inventory";
 import PurchasingOrder from "./pages/PurchaseOrder";
 import Invoice from "./pages/Invoice";
 import Finance from "./pages/finance";
+import Performance from "./pages/performance";
 import "./index.css";
 
 const Router = createBrowserRouter([
@@ -30,8 +31,8 @@ const Router = createBrowserRouter([
     element: <Finance />,
   },
   {
-    path: "/performance",
-    element: <App />,
+    path: "/dashboard",
+    element: <Performance />,
   },
   {
     path: "/general-journal",

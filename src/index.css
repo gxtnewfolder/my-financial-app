@@ -11,3 +11,9 @@
   @apply block py-2 px-4 rounded hover:bg-gray-700; 
 }
 .sidebar a.active { @apply bg-gray-600; } 
+
+/* Main content styles */
+.reportClass {
+  height: 800px;
+  width: 1500px;
+}
