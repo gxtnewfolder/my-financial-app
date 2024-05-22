@@ -1,13 +1,14 @@
 // mockApi.js
 
 function generateRandomJournalEntries(numEntries = 10, filterDate = '') {
-  const accounts = ['Cash', 'Accounts Receivable', 'Inventory', 'Prepaid Expenses', 'Accounts Payable', 'Unearned Revenue', 'Common Stock', 'Retained Earnings', 'Sales Revenue', 'Cost of Goods Sold', 'Salaries Expense', 'Rent Expense', 'Utilities Expense'];
+  const debitAccounts = ['Accounts Receivable', 'Cost of Goods Sold'];
+  const creditAccounts = ['Sales Revenue', 'Inventory'];
 
   const entries = [];
   for (let i = 0; i < numEntries; i++) {
     const date = new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
-    const debitAccount = accounts[Math.floor(Math.random() * accounts.length)];
-    const creditAccount = accounts[Math.floor(Math.random() * accounts.length)];
+    const debitAccount = debitAccounts[Math.floor(Math.random() * debitAccounts.length)];
+    const creditAccount = creditAccounts[Math.floor(Math.random() * creditAccounts.length)];
     const amount = Math.round(Math.random() * 100000) / 100;
 
     // Generate a random reference number (you'll likely want to make this more realistic)

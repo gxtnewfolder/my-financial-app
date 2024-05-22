@@ -79,7 +79,7 @@ function PurchaseOrder() {
             {/* Header Section */}
             <h3 className="text-xl text-center font-semibold mb-4">Purchase Order</h3>
             <div className="flex justify-between mb-4">
-              <div className="mx-6"><img src="/src/assets/logo.png" alt="Logo" className="mx-auto my-4 w-20" /></div>
+              <div className="mx-6"><img type="image/svg+xml" src="/src/assets/logo.png" alt="Logo" className="mx-auto my-4 w-20" /></div>
               <div className="text-right">
                 <p>PO No: {po.poNumber}</p>
                 <p>Invoice No: {po.invoiceNumber}</p>
