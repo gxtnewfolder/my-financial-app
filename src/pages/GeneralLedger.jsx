@@ -1,38 +1,64 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getLedgerData } from '../component/mockAPI';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+// import { getLedgerData } from '../component/mockAPI';
 
 function GeneralLedger() {
   const [ledgerData, setLedgerData] = useState([]);
   const [filteredLedgerData, setFilteredLedgerData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-const navigate = useNavigate();  
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       try {
-        const data = await getLedgerData();
-        setLedgerData(data);
-        setFilteredLedgerData(data);
+        const response = await fetch(
+          "http://localhost:3000/users",
+          { mode: 'no-cors' } // Add no-cors mode
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+        const data = await response.json();
+
+        const transformedData = data.map(sale => ({
+          id: sale.id,
+          name: sale.name,
+          balance: sale.balance,
+          accountType: sale.accountType, // Assuming all data is under the Sales account
+          date: sale.date, 
+        }));
+
+        setLedgerData(transformedData);
+        setFilteredLedgerData(transformedData);
       } catch (error) {
-        console.error('Error fetching ledger data:', error);
+        console.error("Error fetching ledger data:", error);
+        setError(error);
+      } finally {
+        setIsLoading(false);
       }
     };
+
     fetchData();
   }, []);
-
   useEffect(() => {
-    const filtered = ledgerData.map(accountType => ({
+    const filtered = ledgerData.map((accountType) => ({
       ...accountType,
-      accounts: accountType.accounts.filter(account =>
-        account && account.name && account.name.toLowerCase().includes(searchTerm.toLowerCase())
-      )
+      accounts: accountType.accounts.filter(
+        (account) =>
+          account &&
+          account.name &&
+          account.name.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
     }));
     setFilteredLedgerData(filtered);
   }, [searchTerm, ledgerData]);
 
   const handleGoBack = () => {
-    navigate('/finance');
+    navigate("/finance");
   };
 
   return (
@@ -54,13 +80,19 @@ const navigate = useNavigate();
             className="border rounded-md p-2 mr-2 flex-grow"
           >
             <option value="">Select Account</option>
-            {ledgerData.flatMap(accountType => accountType.accounts).map(account => (
-              <option key={account.id} value={account.name}>{account.name}</option>
-            ))}
+            {ledgerData
+              .flatMap((accountType) => accountType.accounts)
+              .map((account) => (
+                <option key={account.id} value={account.name}>
+                  {account.name}
+                </option>
+              ))}
           </select>
-          <button 
+          <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={() => { /* Implement search logic here */ }}
+            onClick={() => {
+              /* Implement search logic here */
+            }}
           >
             Search Now
           </button>
@@ -73,24 +105,46 @@ const navigate = useNavigate();
         <table className="min-w-full divide-y divide-gray-200">
           <thead>
             <tr>
-              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DATE</th>
-              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">EXPLANATION</th>
-              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DEBIT</th>
-              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">CREDIT</th>
-              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">BALANCE</th>
+              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                DATE
+              </th>
+              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                EXPLANATION
+              </th>
+              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                DEBIT
+              </th>
+              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                CREDIT
+              </th>
+              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                BALANCE
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {filteredLedgerData.flatMap((accountType) => accountType.accounts.map((account) => (
-              <tr key={account.id}>
-                {/* ... (table data rows remain the same) */}
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{account.date}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{account.name}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{account.debit}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{account.credit}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{account.balance}</td>
-              </tr>
-            )))}
+            {filteredLedgerData.flatMap((accountType) =>
+              accountType.accounts.map((account) => (
+                <tr key={account.id}>
+                  {/* ... (table data rows remain the same) */}
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {account.date}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {account.name}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {account.debit}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {account.credit}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {account.balance}
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       ) : (

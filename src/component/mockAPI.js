@@ -18,7 +18,6 @@ function generateRandomJournalEntries(numEntries = 10, filterDate = '') {
       entries.push({
         id: i + 1,
         date,
-        description: `Transaction ${i + 1}`,
         debitAccount,
         creditAccount,
         amount,
@@ -167,3 +166,16 @@ export const fetchPurchaseOrder = async (searchQuery = "") => {
     return purchaseOrders; // Return all purchase orders if no search query
   }
 };
+
+export const fetchInventoryStockCard = async () => {
+  // Simulate API call delay
+  await new Promise((resolve) => setTimeout(resolve, 500)); // Adjust delay as needed
+
+  return {
+    'Beginning Stock': { GASOHOL95: '40,000.00 ฿', DIESEL: '30,000.00 ฿' },
+    'Purchased': { GASOHOL95: '120,358,799.91 ฿', DIESEL: '62,707,175.00 ฿' },
+    'Sold': { GASOHOL95: '120,808,345.52 ฿', DIESEL: '62,697,848.34 ฿' },
+    'Ending Stock': { GASOHOL95: '39,550,454.39 ฿', DIESEL: '30,019,326.66 ฿' },
+  };
+};
+

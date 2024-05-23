@@ -16,6 +16,7 @@ function GeneralJournal() {
       try {
         const data = await getJournalEntries(selectedDate); 
         setJournalEntries(data);
+        console.log('Journal Entries:', data);
       } catch (error) {
         console.error('Error fetching journal entries:', error);
       }
