@@ -16,7 +16,7 @@ function GeneralLedger() {
       setIsLoading(true);
       try {
         const response = await fetch(
-          "http://localhost:3000/users",
+          "http://localhost:3001/api/journal-entries",
           { mode: 'no-cors' } // Add no-cors mode
         );
         if (!response.ok) {

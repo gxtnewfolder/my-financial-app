@@ -26,7 +26,7 @@ const Dashboard = () => {
             <iframe
               title="Financial-dashboard"
               className="w-full h-full"
-              src="https://app.powerbi.com/view?r=eyJrIjoiZGVjZjBiNjctZDZjNS00OGYzLTgyNDctYWIxMmI2MTYzMDNjIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D"
+              src="https://app.powerbi.com/view?r=eyJrIjoiNjk3Yzc2ZGMtYmMxOC00N2JkLTgxNjItOWIzMzlhNzZlYzEzIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D"
               frameBorder="0"
               allowFullScreen="true"
             ></iframe>
@@ -37,7 +37,7 @@ const Dashboard = () => {
             <iframe
               title="Performance-dashboard"
               className="w-full h-full"
-              src="https://app.powerbi.com/view?r=eyJrIjoiYzY3NGQ4NzgtZWI0My00ODY4LThiYzQtZDM0MDAxZTBlNmRkIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&pageName=ReportSectione5de5acad7ec2e395b86"
+              src="https://app.powerbi.com/view?r=eyJrIjoiYmU0OWE1MTgtOWZlMS00YWI3LTgwMzUtOTU0NWE0N2Y0N2RlIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D"
               frameBorder="0"
               allowFullScreen="true"
             ></iframe>
