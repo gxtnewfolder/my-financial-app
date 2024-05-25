@@ -26,7 +26,7 @@ const Dashboard = () => {
             <iframe
               title="Financial-dashboard"
               className="w-full h-full"
-              src="https://app.powerbi.com/view?r=eyJrIjoiNjk3Yzc2ZGMtYmMxOC00N2JkLTgxNjItOWIzMzlhNzZlYzEzIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D"
+              src="https://app.powerbi.com/view?r=eyJrIjoiMDdiMTJhM2ItNGFiMi00NDE2LWJlODEtZGJjMmE4MGNkZWU4IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D"
               frameBorder="0"
               allowFullScreen="true"
             ></iframe>
